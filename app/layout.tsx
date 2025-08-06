@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Bless America LLC - Trust Delivered, Mile by Mile</title>
+        <title>blessamericalogistics</title>
 
         <meta
           name="description"

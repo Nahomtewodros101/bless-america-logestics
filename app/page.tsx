@@ -68,7 +68,7 @@ export default function HomePage() {
                 alt="Bless America LLC Logo"
                 width={40}
                 height={40}
-                className="h-10 w-10"
+                className="h-20 w-20 rounded-full"
               />
             </motion.div>
             <motion.div className="text-2xl font-bold text-blue-900 group-hover:text-amber-600 transition-colors duration-300">
@@ -105,7 +105,7 @@ export default function HomePage() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-24 lg:py-32 min-h-[500px] lg:min-h-[800px] overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-black/20"
           initial={{ opacity: 0 }}
@@ -115,8 +115,11 @@ export default function HomePage() {
         <Image
           src="/truck.jpg"
           alt="Bless America LLC truck on the road"
-          fill
-          className="object-cover mix-blend-overlay"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center " // Focus on the top/center to ensure trucks are visible
+          className="mix-blend-overlay"
+          priority // Preload the hero image for faster loading
         />
         <div className="relative container mx-auto px-4 text-center">
           <motion.h1
@@ -176,15 +179,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp}>
-              <Image
-                src="/bles.jpg"
-                alt="Logistics network"
-                width={600}
-                height={300}
-                className="mx-auto mb-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-              />
-            </motion.div>
+           
             <motion.h2
               className="text-4xl lg:text-5xl font-bold text-blue-900 mb-8"
               variants={fadeInUp}

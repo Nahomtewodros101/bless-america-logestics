@@ -28,6 +28,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -74,7 +75,7 @@ export default function DriversPage() {
                     size="lg"
                     className="bg-amber-600 hover:bg-amber-700 text-white group"
                   >
-                    Apply Now
+                    <Link href="/contact">Apply Now</Link>
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
@@ -87,7 +88,7 @@ export default function DriversPage() {
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent"
                   >
-                    Call Recruiter
+                    <Link href="/contact">Contact Recruiting</Link>
                   </Button>
                 </motion.div>
               </div>

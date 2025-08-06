@@ -526,7 +526,7 @@ export default function QuotePage() {
                           </h5>
                           <ul className="text-sm text-gray-700 space-y-1">
                             <li>
-                              • We'll review your quote request within 2 hours
+                              • We'll review your quote request within 30 minutes maximum
                             </li>
                             <li>
                               • Our team will contact you with a competitive

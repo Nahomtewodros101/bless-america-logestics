@@ -235,7 +235,12 @@ export default function ContactPage() {
               <motion.div variants={fadeInUp}>
                 <Card className="border-2 border-gray-200 shadow-lg">
                   <CardContent className="p-8">
-                    <form className="space-y-6">
+                    <form
+                      className="space-y-6"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -296,6 +301,26 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">
+                            MC Number *
+                          </label>
+                          <Input
+                            name="mc"
+                            placeholder="Your MC number"
+                            required
+                            className="transition-all focus:ring-2 focus:ring-amber-500"
+                          />
+                          <p
+                            id="mc-error"
+                            className="text-red-600 text-sm mt-1 hidden"
+                          >
+                            MC number is required
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
                             Inquiry Type *
                           </label>
                           <Select>
@@ -322,17 +347,16 @@ export default function ContactPage() {
                             </SelectContent>
                           </Select>
                         </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Subject *
-                        </label>
-                        <Input
-                          placeholder="Brief subject line"
-                          required
-                          className="transition-all focus:ring-2 focus:ring-amber-500"
-                        />
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Subject *
+                          </label>
+                          <Input
+                            placeholder="Brief subject line"
+                            required
+                            className="transition-all focus:ring-2 focus:ring-amber-500"
+                          />
+                        </div>
                       </div>
 
                       <div>
@@ -376,7 +400,10 @@ export default function ContactPage() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 group">
+                        <Button
+                          type="submit"
+                          className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 group"
+                        >
                           Send Message
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
